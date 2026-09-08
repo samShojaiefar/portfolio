@@ -9,9 +9,26 @@ import {
   MapPin,
   Menu,
   X,
+  GitBranch,
+  ArrowDown01,
+  ArrowDown,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import {
+  SiWordpress,
+  SiReact,
+  SiNextdotjs,
+  SiTypescript,
+  SiJavascript,
+  SiSass,
+  SiTailwindcss,
+  SiFramer,
+  SiGit,
+} from "react-icons/si";
+import { Cable } from "lucide-react";
 import "./portfolio.scss";
+import { GrGithub } from "react-icons/gr";
+import { BsGithub } from "react-icons/bs";
 
 const projects = [
   {
@@ -38,16 +55,16 @@ const projects = [
 ];
 
 const skills = [
-  "Wordpress",
-  "React",
-  "Next.js",
-  "TypeScript",
-  "JavaScript",
-  "SCSS",
-  "Tailwind CSS",
-  "Framer Motion",
-  "REST API",
-  "Git",
+  { name: "Wordpress", icon: SiWordpress },
+  { name: "React", icon: SiReact },
+  { name: "Next.js", icon: SiNextdotjs },
+  { name: "TypeScript", icon: SiTypescript },
+  { name: "JavaScript", icon: SiJavascript },
+  { name: "SCSS", icon: SiSass },
+  { name: "Tailwind CSS", icon: SiTailwindcss },
+  { name: "Framer Motion", icon: SiFramer },
+  { name: "REST API", icon: Cable },
+  { name: "Git", icon: SiGit },
 ];
 
 // Reusable animation variants
@@ -297,7 +314,7 @@ export default function Portfolio() {
                 variants={staggerContainer}
                 initial="hidden"
                 animate="visible"
-                // whileHover="hover"
+              // whileHover="hover"
               >
                 {"SAM".split("").map((letter, i) => (
                   <motion.span
@@ -387,9 +404,28 @@ export default function Portfolio() {
             <Mail />
             Email Me
           </motion.a>
-
           <motion.a
-            href="https://t.me/your_handle"
+            href="https://github.com/samShojaiefar"
+            className="hero-btn"
+            variants={fadeUp}
+            custom={3}
+            whileHover={{
+              y: -3,
+            }}
+            whileTap={{
+              scale: 0.96,
+            }}
+            transition={{
+              type: "spring",
+              stiffness: 300,
+              damping: 20,
+            }}
+          >
+            <BsGithub />
+            Github
+          </motion.a>
+          <motion.a
+            href="https://t.me/s"
             target="_blank"
             rel="noopener noreferrer"
             className="hero-btn"
@@ -433,6 +469,20 @@ export default function Portfolio() {
             Resume
           </motion.a>
         </motion.div>
+        <motion.div
+          className="flex gap-10"
+          variants={staggerContainer}
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.a
+            className="scroolDown"
+            variants={fadeUp}
+            custom={2}
+          >
+            <em className="scroolDowntext">scrool down </em><ArrowDown/>
+          </motion.a>
+        </motion.div>
       </section>
 
       {/* =========================================
@@ -473,6 +523,36 @@ export default function Portfolio() {
           <MapPin size={16} />
           Available for remote work · Bandar-e-Anzali, Iran
         </motion.div>
+      </motion.section>
+      
+      {/* =========================================
+          SKILLS
+      ========================================= */}
+
+<motion.section
+        className="skills"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{
+          once: true,
+          amount: 0.2,
+        }}
+        variants={staggerContainer}
+      >
+        {skills.map((skill, i) => {
+          const Icon = skill.icon;
+          return (
+            <motion.span
+              key={skill.name}
+              className="skill-pill"
+              custom={i}
+              variants={fadeUp}
+            >
+              <Icon size={18} className="skill-pill-icon" />
+              {skill.name}
+            </motion.span>
+          );
+        })}
       </motion.section>
       {/* =========================================
           PROJECTS
@@ -544,34 +624,6 @@ export default function Portfolio() {
         </div>
       </motion.section>
 
-      {/* =========================================
-          SKILLS
-      ========================================= */}
-
-      <motion.section
-        className="skills"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{
-          once: true,
-          amount: 0.2,
-        }}
-        variants={staggerContainer}
-      >
-        {skills.map((skill, i) => (
-          <motion.span
-            key={skill}
-            className="skill-pill"
-            custom={i}
-            variants={fadeUp}
-            whileHover={{
-              scale: 1.08,
-            }}
-          >
-            {skill}
-          </motion.span>
-        ))}
-      </motion.section>
 
       {/* =========================================
           CONTACT
@@ -588,11 +640,13 @@ export default function Portfolio() {
         }}
         variants={staggerContainer}
       >
-        <motion.h2 variants={fadeUp}>Let's work together</motion.h2>
+        <motion.h2 variants={fadeUp}>
+          {" "}
+          <em>Let's work together</em>
+        </motion.h2>
 
         <motion.p variants={fadeUp} custom={1}>
-          Have a project in mind, or just want to talk shop? My inbox is always
-          open.
+          Have a project in mind, or just want to talk shop? I'm all hear.{" "}
         </motion.p>
 
         <motion.a

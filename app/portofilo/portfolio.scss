@@ -1,6 +1,17 @@
 * {
   text-decoration: none !important;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+#about,
+#projects,
+#contact {
+  scroll-margin-top: 110px;
+}
+
 .portfolio {
   --text: #111;
   --primery: background: var(--bg);
@@ -18,13 +29,13 @@
   align-items: center;
   border-bottom: 1px solid var(--border);
   font-size: 0.95rem;
-  background-color: #fbf8f264;
+  background-color: #fbf8f290;
   backdrop-filter: blur(8px);
   border: #0d1c24 1px solid;
   padding: 16px 16px;
-  left: 15%;
-  right: 15%;
-  width: 70%;
+  left: 25%;
+  right: 25%;
+  width: 50%;
   top: 20px;
   border-radius: 35px;
   z-index: 100;
@@ -51,6 +62,7 @@
 /* HERO */
 
 .hero {
+  position: relative;
   min-height: 85vh;
   width: 100%;
   display: flex;
@@ -100,7 +112,17 @@
   border-style: dashed;
   opacity: 0.75;
 }
-
+.scroolDown {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 50px;
+  font-size: 1.2rem;
+  letter-spacing: -1;
+  text-align: center;
+}
 .gap-10 {
   gap: 10px;
   flex-wrap: wrap;
@@ -346,12 +368,33 @@
 }
 
 .skill-pill {
-  border: #0d1c24 1px solid;
-  padding: 8px 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: #0d1c24 1.5px solid;
+  padding: 10px 20px;
   border-radius: 20px;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+  font-weight: 700;
   color: #0d1c24;
+  background: #fbf8f2;
   cursor: default;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
+  box-shadow: 2px 2px 0 rgba(13, 28, 36, 0.1);
+}
+
+.skill-pill:hover {
+  background: #0d1c24;
+  color: #fbf8f2;
+  box-shadow: 3px 3px 0 rgba(13, 28, 36, 0.25);
+  cursor: pointer;
+}
+
+.skill-pill-icon {
+  flex-shrink: 0;
 }
 
 /* CONTACT */
@@ -474,23 +517,29 @@ footer {
 ========================================= */
 
 @media (max-width: 768px) {
+  #about,
+  #projects,
+  #contact {
+    scroll-margin-top: 90px;
+  }
+
   /* NAV */
 
   .nav {
     position: fixed;
 
     left: 16px;
-    right: 16px;
+    right: auto;
 
     width: auto;
 
     top: 12px;
 
-    padding: 10px 12px;
+    padding: 10px;
 
-    border-radius: 28px;
+    border-radius: 50%;
 
-    justify-content: space-between;
+    justify-content: center;
   }
 
   /* LOGO */
@@ -623,6 +672,19 @@ footer {
     justify-content: center;
   }
 
+  /* SCROLL DOWN — pin to bottom of hero so it's
+     visible without needing to scroll past the
+     stacked buttons first */
+  .scroolDown {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 0;
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+
   .hero-btn {
     padding: 8px 13px;
 
@@ -682,6 +744,36 @@ footer {
     height: 250%;
 
     transform: scale(0.4);
+  }
+
+  /* touch devices have no :hover, so show the
+     "visit site" affordance by default */
+  .project-frame-overlay {
+    opacity: 1;
+    background: linear-gradient(
+      to top,
+      rgba(13, 28, 36, 0.55) 0%,
+      rgba(13, 28, 36, 0) 45%
+    );
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 12px;
+  }
+
+  .project-frame-overlay svg {
+    width: 32px;
+    height: 32px;
+    padding: 8px;
+    background: #fbf8f2;
+    border-radius: 50%;
+    color: #0d1c24;
+  }
+
+  .mobile-menu a,
+  .navList a {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
   }
 
   .project-meta {
@@ -790,13 +882,13 @@ footer {
 @media (max-width: 480px) {
   .nav {
     left: 10px;
-    right: 10px;
+    right: auto;
 
     top: 10px;
 
-    padding: 9px 11px;
+    padding: 9px;
 
-    border-radius: 24px;
+    border-radius: 50%;
   }
 
   .nav-logo .logo {
@@ -1001,12 +1093,12 @@ footer {
 @media (max-width: 768px) {
   .nav {
     left: 16px;
-    right: 16px;
+    right: auto;
     width: auto;
 
-    padding: 10px 12px;
+    padding: 10px;
 
-    justify-content: space-between;
+    justify-content: center;
   }
 
   /* Hide desktop links */
@@ -1087,7 +1179,7 @@ footer {
 @media (max-width: 480px) {
   .nav {
     left: 10px;
-    right: 10px;
+    right: auto;
 
     top: 10px;
   }
@@ -1097,14 +1189,9 @@ footer {
     right: 10px;
 
     top: 66px;
-  }
+  } 
 }
 /* TABLET + MOBILE */
-@media (max-width: 1024px) {
-  .navList {
-    display: none !important;
-  }
-}
 
 /* MOBILE */
 @media (max-width: 768px) {
