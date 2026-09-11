@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-, "app/portofilo/portofilo.tsx", "app/page.jsx", "app/layout.jsx"  ],
+, "app/portofilo/portofilo.tsx", "app/page.tsx", "app/layout.tsx"  ],
   "exclude": ["node_modules"]
 }

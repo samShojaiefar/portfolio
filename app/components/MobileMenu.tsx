@@ -19,7 +19,7 @@ export default function MobileMenu({ menuOpen, closeMenu }: MobileMenuProps) {
           exit={{ opacity: 0, y: -15, scale: 0.98 }}
           transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
         >
-          {["Projects", "About", "Contact"].map((item, i) => (
+          {["Projects", "About", "Contact","Hero"].map((item, i) => (
             <motion.a
               key={item}
               href={`#${item.toLowerCase()}`}

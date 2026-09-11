@@ -8,7 +8,7 @@ import { fadeUp, staggerContainer } from "@/lib/animationEffects";
 
 export default function Hero() {
   return (
-    <section className="hero">
+    <section className="hero" id="hero">
       <motion.h1 initial="hidden" animate="visible" variants={staggerContainer}>
         <motion.b variants={fadeUp} custom={0} style={{ display: "block" }}>
           I'm{" "}

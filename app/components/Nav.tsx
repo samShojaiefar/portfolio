@@ -23,7 +23,7 @@ export default function Nav({ menuOpen, setMenuOpen }: NavProps) {
         initial="hidden"
         animate="visible"
       >
-        {["Projects", "About", "Contact"].map((item) => (
+        {["Projects", "About", "Contact","Hero"].map((item) => (
           <motion.a
             key={item}
             href={`#${item.toLowerCase()}`}

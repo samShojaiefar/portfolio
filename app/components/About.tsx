@@ -28,7 +28,7 @@ export default function About() {
 
       <motion.p variants={fadeUp} custom={2} className="about-lead">
         I mainly work with React and Next.js, styling with SCSS and Tailwind,
-        and bring motion in with Framer Motion when it serves the content
+        and bring motion in, when it serves the content
         rather than decorates it. Currently based in Iran, open to remote
         roles and freelance projects worldwide.
       </motion.p>

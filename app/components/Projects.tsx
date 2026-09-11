@@ -48,8 +48,7 @@ export default function Projects() {
                   src={project.url}
                   title={project.title}
                   loading="lazy"
-                  sandbox="allow-scripts allow-same-origin"
-                />
+                  sandbox="allow-scripts"                />
 
                 <div className="project-frame-overlay">
                   <ArrowUpRight />
