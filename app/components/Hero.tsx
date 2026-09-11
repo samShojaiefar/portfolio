@@ -115,7 +115,7 @@ export default function Hero() {
         initial="hidden"
         animate="visible"
       >
-        <motion.a className="scroolDown" variants={fadeUp} custom={2}>
+        <motion.a className="scroolDown" href="#about" variants={fadeUp} custom={2}>
           <em className="scroolDowntext">scrool down </em>
           <ArrowDown />
         </motion.a>

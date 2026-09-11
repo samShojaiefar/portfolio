@@ -2,33 +2,7 @@
 import { motion } from "framer-motion";
 import "@/app/portofilo/portfolio.scss";
 import { fadeUp, staggerContainer } from "@/lib/animationEffects";
-import {
-  SiWordpress,
-  SiReact,
-  SiNextdotjs,
-  SiTypescript,
-  SiJavascript,
-  SiSass,
-  SiTailwindcss,
-  SiGit,
-  SiAntdesign,
-  SiShadcnui,
-} from "react-icons/si";
-import { Cable } from "lucide-react";
-
-const skills = [
-  { name: "Wordpress", icon: SiWordpress },
-  { name: "React", icon: SiReact },
-  { name: "Next.js", icon: SiNextdotjs },
-  { name: "TypeScript", icon: SiTypescript },
-  { name: "JavaScript", icon: SiJavascript },
-  { name: "SCSS", icon: SiSass },
-  { name: "Tailwind CSS", icon: SiTailwindcss },
-  { name: "REST API", icon: Cable },
-  { name: "Git", icon: SiGit },
-  { name: "Ant Design", icon: SiAntdesign },
-  { name: "Shadcn", icon: SiShadcnui },
-];
+import { skills } from "@/lib/data/skills";
 
 export default function Skills() {
   return (
@@ -42,7 +16,12 @@ export default function Skills() {
       {skills.map((skill, i) => {
         const Icon = skill.icon;
         return (
-          <motion.span key={skill.name} className="skill-pill" custom={i} variants={fadeUp}>
+          <motion.span
+            key={skill.name}
+            className="skill-pill"
+            custom={i}
+            variants={fadeUp}
+          >
             <Icon size={18} className="skill-pill-icon" />
             {skill.name}
           </motion.span>
