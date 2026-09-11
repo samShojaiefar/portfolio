@@ -100,7 +100,7 @@ html {
 .hero-btn {
   border: #0d1c24 1px solid;
   padding: 8px 16px;
-  border-radius: 16px;
+  border-radius: 20px;
   cursor: pointer;
   display: flex;
   gap: 8px;
@@ -360,7 +360,7 @@ html {
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
-  padding: 60px 24px 100px;
+  padding: 00px 24px 100px;
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
@@ -412,11 +412,6 @@ html {
   font-size: 1.05rem;
   opacity: 0.75;
   margin: 0 0 28px;
-}
-
-.contact .hero-btn {
-  display: inline-flex;
-  margin: 0 auto;
 }
 
 footer {
@@ -675,22 +670,22 @@ footer {
   /* SCROLL DOWN — pin to bottom of hero so it's
      visible without needing to scroll past the
      stacked buttons first */
-  .scroolDown {
-    position: absolute;
-    bottom: 24px;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-top: 0;
-    font-size: 1rem;
-    white-space: nowrap;
-  }
+  // .scroolDown {
+  //   position: absolute;
+  //   bottom: 24px;
+  //   left: 50%;
+  //   transform: translateX(-50%);
+  //   margin-top: 0;
+  //   font-size: 1rem;
+  //   white-space: nowrap;
+  // }
 
   .hero-btn {
     padding: 8px 13px;
 
     font-size: 0.85rem;
 
-    border-radius: 14px;
+    border-radius: 20px;
 
     gap: 6px;
   }

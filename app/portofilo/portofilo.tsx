@@ -24,11 +24,15 @@ import {
   SiTailwindcss,
   SiFramer,
   SiGit,
+  SiAntdesign,
+  SiShadcnui,
+  SiGithub,
 } from "react-icons/si";
 import { Cable } from "lucide-react";
 import "./portfolio.scss";
 import { GrGithub } from "react-icons/gr";
-import { BsGithub } from "react-icons/bs";
+import { BsGithub, BsLinkedin } from "react-icons/bs";
+import { SlSocialLinkedin } from "react-icons/sl";
 
 const projects = [
   {
@@ -62,9 +66,10 @@ const skills = [
   { name: "JavaScript", icon: SiJavascript },
   { name: "SCSS", icon: SiSass },
   { name: "Tailwind CSS", icon: SiTailwindcss },
-  { name: "Framer Motion", icon: SiFramer },
   { name: "REST API", icon: Cable },
   { name: "Git", icon: SiGit },
+  { name: "Ant Design", icon: SiAntdesign },
+  { name: "Shadcn", icon: SiShadcnui },
 ];
 
 // Reusable animation variants
@@ -314,7 +319,7 @@ export default function Portfolio() {
                 variants={staggerContainer}
                 initial="hidden"
                 animate="visible"
-              // whileHover="hover"
+                // whileHover="hover"
               >
                 {"SAM".split("").map((letter, i) => (
                   <motion.span
@@ -421,11 +426,11 @@ export default function Portfolio() {
               damping: 20,
             }}
           >
-            <BsGithub />
+            <SiGithub />
             Github
           </motion.a>
           <motion.a
-            href="https://t.me/s"
+            href="https://www.linkedin.com/in/sam-shojaiefar-8a752229b/"
             target="_blank"
             rel="noopener noreferrer"
             className="hero-btn"
@@ -443,12 +448,12 @@ export default function Portfolio() {
               damping: 20,
             }}
           >
-            <Send />
-            Dm Telegram
+            <BsLinkedin />
+            Linkedin
           </motion.a>
 
-          <motion.a
-            href="/resume.pdf"
+          {/* <motion.a
+            href="https://drive.google.com/file/d/1p4rO-eYQOy2KmPyohkEh1iTr5J9Tv4TE/view?usp=sharing"
             download
             className="hero-btn hero-btn--ghost"
             variants={fadeUp}
@@ -467,7 +472,7 @@ export default function Portfolio() {
           >
             <Download />
             Resume
-          </motion.a>
+          </motion.a> */}
         </motion.div>
         <motion.div
           className="flex gap-10"
@@ -475,12 +480,9 @@ export default function Portfolio() {
           initial="hidden"
           animate="visible"
         >
-          <motion.a
-            className="scroolDown"
-            variants={fadeUp}
-            custom={2}
-          >
-            <em className="scroolDowntext">scrool down </em><ArrowDown/>
+          <motion.a className="scroolDown" variants={fadeUp} custom={2}>
+            <em className="scroolDowntext">scrool down </em>
+            <ArrowDown />
           </motion.a>
         </motion.div>
       </section>
@@ -524,12 +526,12 @@ export default function Portfolio() {
           Available for remote work · Bandar-e-Anzali, Iran
         </motion.div>
       </motion.section>
-      
+
       {/* =========================================
           SKILLS
       ========================================= */}
 
-<motion.section
+      <motion.section
         className="skills"
         initial="hidden"
         whileInView="visible"
@@ -624,7 +626,6 @@ export default function Portfolio() {
         </div>
       </motion.section>
 
-
       {/* =========================================
           CONTACT
       ========================================= */}
@@ -646,25 +647,100 @@ export default function Portfolio() {
         </motion.h2>
 
         <motion.p variants={fadeUp} custom={1}>
-          Have a project in mind, or just want to talk shop? I'm all hear.{" "}
+          Have a project in mind, or just want to talk shop? I'm all eare.{" "}
         </motion.p>
 
-        <motion.a
-          href="mailto:hello@samshojaiefar.dev"
-          className="hero-btn"
-          variants={fadeUp}
-          custom={2}
-          whileHover={{
-            scale: 1.05,
-            y: -2,
-          }}
-          whileTap={{
-            scale: 0.96,
-          }}
+        <motion.div
+          className="flex gap-10"
+          variants={staggerContainer}
+          initial="hidden"
+          animate="visible"
         >
-          <Mail />
-          Say hello
-        </motion.a>
+          <motion.a
+            href="mailto:hello@samshojaiefar.dev"
+            className="hero-btn"
+            variants={fadeUp}
+            custom={3}
+            whileHover={{
+              y: -3,
+            }}
+            whileTap={{
+              scale: 0.96,
+            }}
+            transition={{
+              type: "spring",
+              stiffness: 300,
+              damping: 20,
+            }}
+          >
+            <Mail />
+            Email Me
+          </motion.a>
+          <motion.a
+            href="https://github.com/samShojaiefar"
+            className="hero-btn"
+            variants={fadeUp}
+            custom={3}
+            whileHover={{
+              y: -3,
+            }}
+            whileTap={{
+              scale: 0.96,
+            }}
+            transition={{
+              type: "spring",
+              stiffness: 300,
+              damping: 20,
+            }}
+          >
+            <SiGithub />
+            Github
+          </motion.a>
+          <motion.a
+            href="https://t.me/s"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hero-btn"
+            variants={fadeUp}
+            custom={4}
+            whileHover={{
+              y: -3,
+            }}
+            whileTap={{
+              scale: 0.96,
+            }}
+            transition={{
+              type: "spring",
+              stiffness: 300,
+              damping: 20,
+            }}
+          >
+            <Send />
+            Dm Telegram
+          </motion.a>
+{/* 
+          <motion.a
+            href="https://drive.google.com/file/d/1p4rO-eYQOy2KmPyohkEh1iTr5J9Tv4TE/view?usp=sharing"
+            download
+            className="hero-btn hero-btn--ghost"
+            variants={fadeUp}
+            custom={5}
+            whileHover={{
+              y: -3,
+            }}
+            whileTap={{
+              scale: 0.96,
+            }}
+            transition={{
+              type: "spring",
+              stiffness: 300,
+              damping: 20,
+            }}
+          >
+            <Download />
+            Resume
+          </motion.a> */}
+        </motion.div>
       </motion.section>
 
       {/* =========================================
